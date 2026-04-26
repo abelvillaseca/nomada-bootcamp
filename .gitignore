@@ -1,0 +1,7 @@
+# Ignorar ejecutables en Mac/Linux
+*.out
+*.o
+*.exe
+
+# Variables de entorno
+.env
