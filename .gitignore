@@ -5,3 +5,10 @@
 
 # Variables de entorno
 .env
+
+# Ignorar archivos sin extensión pero no carpetas
+*
+!*/
+!*.*
+
+.DS_Store
