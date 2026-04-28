@@ -12,6 +12,6 @@ let i = 1
 
 while (i <= 10) {
   let resultado = num * i
-  console.log(num + 'x' + i + ' = ' + resultado)
+  console.log(`${num} x ${i} = ${num * i}`)
   i++
 }
