@@ -1,1 +1,2 @@
-srand(time(0)); // 
+
+    jugar(secreto);
