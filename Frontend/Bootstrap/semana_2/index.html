@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 class="text-center text-primary mt-5">Hola Mundo</h1>
+    <button class="btn btn-primary">Botón azul</button>
+    <button class="btn btn-danger">Eliminar</button>
+    <button class="btn btn-success">Guardar</button>
+    <button class="btn btn-outline-primary">Ver más...</button>
+    <button class="btn btn-primary btn-lg mt-5">Grande</button>
+    <button class="btn btn-primary btn-sm mt-5">Pequeño</button> -->
+
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="height: 100px; background: #f0f0f0"
+    >
+      <p class="mb-0">Estoy centrado horizontal y verticalmente</p>
+    </div>
+
+    <div class="d-flex justify-content-between p-3 bg-light">
+      <span>Izquierda</span>
+      <span>Centro</span>
+      <span>Derecha</span>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#miModal"
+    >
+      Abrir ventana emergente
+    </button>
+
+    <div class="modal fade" id="miModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Título del modal</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>Aquí va el contenido de tu modal.</p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-4 bg-primary p-3">Columna 1</div>
+        <div class="col-md-4 bg-success p-3">Columna 2</div>
+        <div class="col-md-4 bg-danger p-3">Columna 3</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col">Aquí va el contenido</div>
+    </div>
+
+    <!-- CONTAINER: Ancho fijo y centrado
+
+    El contenedor más usado.
+    -->
+
+    <div class="container mt-5 bg-light p-4">
+      <p>Este contenido tiene márgenes a los lados.</p>
+    </div>
+
+    <!-- CONTAINER-FLUID: Siempre al 100% del ancho
+
+    El contenedor más usado.
+    -->
+
+    <div class="container-fluid bg-dark text-white p-4 mt-5">
+      <p>Esto va de borde a borde</p>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

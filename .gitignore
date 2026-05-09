@@ -1,3 +1,6 @@
+# Dependencias
+node_modules/
+
 # Ignorar ejecutables en Mac/Linux
 *.out
 *.o
@@ -11,4 +14,5 @@
 !*/
 !*.*
 
+#Archivos de sistema
 .DS_Store
