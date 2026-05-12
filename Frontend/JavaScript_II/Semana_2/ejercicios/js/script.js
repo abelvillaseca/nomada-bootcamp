@@ -1,4 +1,13 @@
-function calcularPrecioFinal(precioBase) {
+// function calcularPrecioFinal(precioBase) {
+//   let IGV = precioBase * 0.18
+//   let precioFinal = precioBase + IGV
+//   return {
+//     IGV: IGV,
+//     precioFinal: precioFinal,
+//   }
+// }
+
+const calcularPrecioFinal = function (precioBase) {
   let IGV = precioBase * 0.18
   let precioFinal = precioBase + IGV
   return {
