@@ -1,0 +1,60 @@
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, #4facfe, #5e548c);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5e548c;
+}
+
+.resultado {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+.resultado span {
+  font-weight: bold;
+  color: #4facfe;
+}
