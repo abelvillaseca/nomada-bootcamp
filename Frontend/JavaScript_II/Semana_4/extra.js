@@ -24,3 +24,65 @@
 // - pop()
 // - unshift()
 // - shift()
+
+let colaClientes = [];
+
+function mostrarCola() {
+
+    if (colaClientes.length === 0) {
+        console.log("La cola de clientes está vacía.");
+    } else {
+        console.log("Estado actual de la cola:", colaClientes);
+    }
+}
+
+function agregarClienteNormal(nombre) {
+
+    colaClientes.push(nombre);
+
+    console.log(`Cliente normal "${nombre}" agregado al final de la cola.`);
+}
+
+function agregarClienteVIP(nombre) {
+
+    colaClientes.unshift(nombre);
+
+    console.log(`Cliente VIP "${nombre}" agregado al inicio de la cola.`);
+}
+
+function atenderCliente() {
+
+    if (colaClientes.length === 0) {
+        console.log("No hay clientes para atender.");
+    } else {
+        const clienteAtendido = colaClientes.shift();
+        console.log(`Cliente "${clienteAtendido}" ha sido atendido.`);
+    }
+}
+
+function cancelarUltimoCliente() {
+
+    if (colaClientes.length === 0) {
+        console.log("No hay clientes para cancelar.");
+    } else {
+        const clienteCancelado = colaClientes.pop();
+        console.log(`Cliente "${clienteCancelado}" ha sido cancelado de la cola.`);
+    }
+}
+
+agregarClienteNormal("Juan"); // ["Juan"]
+agregarClienteNormal("María"); // ["Juan", "María"]
+
+mostrarCola();
+
+agregarClienteVIP("Abel"); // ["Abel", "Juan", "María"]
+
+mostrarCola();
+
+atenderCliente();
+
+mostrarCola(); // ["Juan", "María"]
+
+cancelarUltimoCliente();
+
+mostrarCola(); // ["Juan"]
