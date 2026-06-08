@@ -115,7 +115,7 @@ int main()
     for (int i = 1; i <= cantidad; i++)
     {
         cout << "Ingresa el elemento " << i << ": ";
-        cin >> numero;
+        cin >> numero; // 10
 
         insertarFinal(cabeza, numero);
     }
