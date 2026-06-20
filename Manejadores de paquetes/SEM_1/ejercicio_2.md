@@ -1,0 +1,1 @@
+Crea un archivo info.js que imprima tres líneas: tu nombre, tu ciudad y la versión de Node que tienes instalada (escríbela a mano, mirando el resultado de node --version). Ejecútalo con Node.
