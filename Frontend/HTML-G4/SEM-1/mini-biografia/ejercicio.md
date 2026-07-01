@@ -1,0 +1,1 @@
+Construye tu mini biografía, usando jerarquía y formato semántico.
