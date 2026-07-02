@@ -10,3 +10,12 @@ function mapear(elemento, nivel = 0) {
 }
 
 mapear(document.body);
+
+// TextContent
+// InnerHTML
+
+// XSS(Cross-site Scripting)
+
+const mensaje = document.getElementById("mensaje");
+
+mensaje.innerHTML = "<strong>Hola mundo</strong>";
