@@ -1,0 +1,31 @@
+body {
+    background: #eeeeee;
+    font-family: sans-serif;
+    color: #334155;
+}
+
+h1 {
+    color: #0e7490;
+}
+
+a {
+    color: red;
+}
+
+.tareas li {
+    list-style: none;
+}
+
+.tareas li:first-child {
+    font-weight: bold;
+}
+
+.tareas li.hecho {
+    text-decoration: line-through;
+    color: #808d9f;
+}
+
+.tareas li:not(.hecho)::before {
+    content: "➡️ ";
+    color: #0e7490;
+}
