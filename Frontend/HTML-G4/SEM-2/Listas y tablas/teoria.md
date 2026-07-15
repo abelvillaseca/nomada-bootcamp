@@ -9,3 +9,8 @@ TABLAS
 - <tr> => table row => fila de la tabla
 - <th> => table header => celda de encabezado (negrita y centrado por defecto)
 - <td> => table data => celda de datos
+- Son para datos
+
+* ELABORA UN HORARIO DE CLASES CON LISTAS Y TABLA
+- Combina una lista de materiales con una tabla de tu horario diario real.
+- Extra: Agrega una columna de "Duración".
