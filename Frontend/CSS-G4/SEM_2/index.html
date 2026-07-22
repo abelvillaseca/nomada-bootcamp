@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/buscar?q=html&pag=2" method="post">
+        <label for="">Correo electrónico</label>
+        <input type="email" placeholder="ejemplo@gmail.com" minlength="8" maxlength="10" disabled>
+        <label for="">Contraseña</label>
+        <input type="password">
+        <input type="number" min="10" max="20">
+        <input type="tel">
+        <input type="date">
+        <input type="color">
+        <input type="range" min="10" max="20">
+        <input type="file">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" id="nombre">
+        <label>
+            Correo electrónico:
+            <input type="email" name="correo" required>
+        </label>
+        <button type="submit">Enviar</button>
+        <br>
+        <label for="msg">Mensaje</label>
+        <textarea name="mensaje" id="msg" placeholder="Escribe un mensaje..." rows="5" cols="30"></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+        <button type="button">Ejecuta</button>
+        <br>
+        <h3>Listas desplegables</h3>
+        <label for="curso">Elige tu curso</label>
+        <select name="curso" id="curso">
+            <option value="">---Selecciona---</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+        </select>
+        <select name="tec">
+            <optgroup label="Frontend">
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+            </optgroup>
+            <optgroup label="Backend">
+                <option value="">Node</option>
+                <option value="">Express</option>
+            </optgroup>
+        </select>
+
+        <input list="ciudades" name="ciudad">
+        <datalist id="ciudades">
+            <option value="Lima"></option>
+            <option value="Cusco"></option>
+            <option value="Trujillo"></option>
+        </datalist>
+
+        <br>
+        <!-- <h3>Radios y checkboxes</h3>
+        <input type="radio" name="turno" id="m" value="manana">
+        <label for="m">Mañana</label>
+
+        <input type="radio" name="turno" id="t" value="tarde">
+        <label for="t">Tarde</label>
+
+        <input type="checkbox" name="temas" id="h" value="html">
+        <label for="h">HTML</label>
+
+        <input type="checkbox" name="temas" id="c" value="css">
+        <label for="c">CSS</label> -->
+
+        <br>
+        <h3>Agrupaciones</h3>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="n">Nombre: </label>
+            <input type="text" name="nombre" id="n">
+        </fieldset>
+        <fieldset>
+            <legend>Preferencias de horario</legend>
+            <input type="radio" id="m" name="turno" value="manana">
+            <label for="m">Mañana</label>
+            <input type="radio" name="turno" id="t" value="tarde">
+            <label for="t">Tarde</label>
+        </fieldset>
+    </form>
+</body>
+
+</html>
