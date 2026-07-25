@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>FAQ's</h2>
+        <details>
+            <summary>¿Qué incluye el curso?</summary>
+            <p>Doce clases en vivo, material descargable y certificado al finalizar</p>
+        </details>
+        <details open>
+            <summary>¿Necesito experiencia previa?</summary>
+            <p>No. Empezamos desde cero.</p>
+        </details>
+
+        <dialog id="aviso">
+            <h3>Inscripción confirmada</h3>
+            <p>Te enviamos un correo con los detalles.</p>
+            <button onclick="aviso.close()">Cerrar</button>
+        </dialog>
+
+        <button onclick="aviso.showModal()">Ver aviso</button>
+    </body>
+</html>
