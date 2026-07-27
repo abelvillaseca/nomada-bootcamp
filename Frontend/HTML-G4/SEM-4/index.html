@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/estilos.css" />
+        <title>Tablero de tareas</title>
+    </head>
+    <body>
+        <h1>Tablero de tareas Nómada</h1>
+
+        <section class="board"></section>
+
+        <template id="task-template">
+            <article class="card" draggable="true">
+                <img />
+                <h2></h2>
+                <p></p>
+            </article>
+        </template>
+
+        <dialog id="dialog">
+            <h2 id="dialogTitle"></h2>
+            <img id="dialogImage" />
+            <p id="dialogDescription"></p>
+            <button id="closeDialog">Cerrar</button>
+        </dialog>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
