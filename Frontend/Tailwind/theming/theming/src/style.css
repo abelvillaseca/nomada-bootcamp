@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-brand: #4f46e5;
+    --color-accent: #ec4899;
+    --font-heading: 'JetBrains Mono', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+@utility glass {
+    background-color: rgb(255 255 255 / 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(255 255 255 / 0.3);
+    box-shadow:
+        0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
