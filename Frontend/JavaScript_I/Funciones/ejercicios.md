@@ -1,0 +1,3 @@
+1. Crea una función declarada encontrarMaximo que reciba un array de números como argumento. La función debe devolver el número más grande dentro del array. Si el array está vacío, debe devolver undefined.
+2. Crea una expresión de función asignada a una constante contieneCaracter. Debe aceptar dos strings: un texto y un carácter a buscar. Debe devolver true si el carácter se encuentra dentro del texto (ignorando mayúsculas/minúsculas) y false si no.
+3. Crea una función flecha llamada calcularIMC que reciba dos argumentos: peso en kilogramos y altura en metros. Debe devolver el Índice de Masa Corporal (IMC), calculado como IMC=peso/altura al cuadrado. Asegúrate de devolver el resultado redondeado a dos decimales.
