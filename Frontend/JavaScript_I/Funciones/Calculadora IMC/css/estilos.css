@@ -18,3 +18,122 @@ body {
     min-height: 100vh;
     padding: 24px;
 }
+
+.card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    padding: 36px;
+    border-radius: 24px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+    margin-bottom: 32px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 16px;
+    border-radius: 24px;
+    background: #f0f0f0;
+    color: #525252;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.header p {
+    color: #737373;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #404040;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d4d4d4;
+    border-radius: 12px;
+    background: #ffffff;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.input-wrapper span {
+    padding-right: 14px;
+    color: #737373;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-wrapper:focus-within {
+    border-color: #171717;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+button {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 12px;
+    background: #171717;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s background 0.2s;
+}
+
+button:hover {
+    background: #303030;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.resultado {
+    margin-top: 28px;
+    padding: 24px;
+    border-radius: 16px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.resultado-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #737373;
+    font-size: 13px;
+}
+
+#valorIMC {
+    display: block;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
