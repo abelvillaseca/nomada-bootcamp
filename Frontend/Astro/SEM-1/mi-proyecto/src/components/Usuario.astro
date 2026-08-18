@@ -1,0 +1,13 @@
+---
+interface Props {
+    nombre: string
+    edad: number
+    profesion: string
+}
+
+const { nombre, edad, profesion } = Astro.props
+---
+
+<h1>Hola {nombre.toUpperCase()}</h1>
+<p>Mi edad es {edad} años</p>
+<p>Profesión: {profesion}</p>
