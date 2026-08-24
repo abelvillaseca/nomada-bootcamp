@@ -13,6 +13,53 @@
 // Si la opción no existe, debe indicar que la operación es inválida.
 // El resultado debe ser devuelto mediante return.
 
-// includes() y indexOf()
+function sumar(numero1, numero2) {
+    const resultado = numero1 + numero2
+    return resultado
+}
 
-// "papaya".includes("a") → true
+function restar(numero1, numero2) {
+    const resultado = numero1 - numero2
+    return resultado
+}
+
+function multiplicar(numero1, numero2) {
+    const resultado = numero1 * numero2
+    return resultado
+}
+
+function dividir(numero1, numero2) {
+    if (numero2 === 0) {
+        return 'Error: No se puede dividir por cero'
+        // return null
+    }
+    const resultado = numero1 / numero2
+    return resultado
+}
+
+const numero1 = 20
+const numero2 = 5
+
+const opcion = 2
+
+let resultado
+
+switch (opcion) {
+    case 1:
+        resultado = sumar(numero1, numero2)
+        break
+    case 2:
+        resultado = restar(numero1, numero2)
+        break
+    case 3:
+        resultado = multiplicar(numero1, numero2)
+        break
+    case 4:
+        resultado = dividir(numero1, numero2)
+        break
+    default:
+        console.log('Opción inválida')
+        break
+}
+
+console.log(`El resultado de la operación ${opcion} es ${resultado}`)
