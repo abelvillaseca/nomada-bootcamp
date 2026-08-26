@@ -65,6 +65,40 @@ console.log(canciones)
 // Procesa la primera tarea en la lista usando shift()
 // Ejecuta y verifica los resultados.
 
+// splice(inicio, cantidadElementosAEliminar, elemento1, elemento2, ..., elementoN): Elimina elementos del arreglo y devuelve una nueva
+// copia del arreglo con los elementos eliminados. Si no elimina ningún elemento, devuelve un arreglo vacío.
+
+let meses = ['Ene', 'Mar', 'Abr', 'Jun']
+console.log('Arreglo original: ', meses)
+
+let eliminados = meses.splice(1, 0, 'Feb')
+console.log('Arreglo después de insertar Feb: ', meses) // ['Ene', 'Feb', 'Mar', 'Abr', 'Jun']
+
+let eliminados2 = meses.splice(3, 2, 'Mayo', 'Junio')
+console.log('Arreglo después reemplazar Mayo y Junio: ', meses) // ['Ene', 'Feb', 'Mar', 'Mayo', 'Junio']
+console.log('Elementos eliminados: ', eliminados2) // ['Abr', 'Jun']
+
+let eliminados3 = meses.splice(1, 1)
+console.log('Arreglo después de eliminar Feb: ', meses) // ['Ene, 'Mar', 'Mayo', 'Junio']
+console.log('Elementos eliminados: ', eliminados3) // ['Feb']
+
 // ============================================================================
 
 // NO MUTADORES
+
+// slice(inicio, fin): Devuelve una copia de un arreglo.
+let animales = ['Perro', 'Gato', 'Elefante', 'Tigre', 'Conejo']
+let algunosAnimales = animales.slice(1, 3)
+console.log(algunosAnimales) // ['Gato', 'Elefante']
+
+let ultimosDos = animales.slice(-2)
+console.log(ultimosDos) // ['Tigre', 'Conejo']
+
+let copiaCompleta = animales.slice()
+console.log(copiaCompleta) // ['Perro', 'Gato', 'Elefante', 'Tigre', 'Conejo']
+
+// Crea una lista de invitados (let invitados = ["Ana", "Luis", "Maria", "Juan", "Sofia", "Carlos"];).
+// Alugnos invitados llegan temprano (usa slice( ) para obtener los primeros 3)
+// Juan no puede venir, hay que quitarlo y en su lugar añadir a “Elena” y “Pedro” (usa splice ( ))
+// Solo queremos quedarnos con los 4 primeros invitados de la nueva lista (usa splice( ) para eliminar del 4to en adelante)
+// Ejecuta y analiza cómo slice no cambia el original y cómo splice lo modifica y devuelve los elementos eliminados.
