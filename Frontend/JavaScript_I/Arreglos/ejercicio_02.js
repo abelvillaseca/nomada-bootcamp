@@ -1,7 +1,8 @@
 // Ejercicio: Gestor de lista de reproducción
 // Objetivo
 
-// Construir un pequeño sistema que permita administrar una lista de reproducción utilizando métodos de arreglos y diferentes tipos de funciones.
+// Construir un pequeño sistema que permita administrar una lista de reproducción utilizando métodos de arreglos y
+// diferentes tipos de funciones.
 
 // El programa deberá permitir:
 
