@@ -139,3 +139,16 @@ console.log(letras.includes('b', 2))
 // Encuentra la siguiente posición de "Leche" comenzando la búsqueda después de la primera que encontraste
 // Verifica si "Brócoli" está en la lista usando indexOf( ) y comparando con -1
 // Ejecuta y analiza los resultados de cada método.
+
+brocoliEnLaLista = listaCompleta.indexOf('Brócoli') // -1
+// brocoliEnLaLista = -1
+// console.log('¿Brócoli está en la lista?: ')
+// if (brocoliEnLaLista === -1) {
+//     console.log('No se encuentra')
+// } else {
+//     console.log('Se encuentra')
+// }
+
+console.log(
+    `¿Brócoli está en la lista?: ${brocoliEnLaLista === -1 ? 'No se encuentra' : 'Se encuentra'}`
+)
