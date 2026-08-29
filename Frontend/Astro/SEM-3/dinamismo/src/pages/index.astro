@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProductCard from '../components/ProductCard.astro'
+
+const productos = [
+    {
+        nombre: 'MacBook Air',
+        descripcion: 'Laptop diseñada para trabajar',
+        precio: '5,000',
+        categoria: 'Mac',
+        imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHeVnF8KxhluhUbMBk3225mJ9IH2pcBlQkeK78b7lTw&s',
+        disponible: true,
+        destacado: true,
+    },
+    {
+        nombre: 'MacBook Air',
+        descripcion: 'Laptop diseñada para trabajar',
+        precio: '5,000',
+        categoria: 'Mac',
+        imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHeVnF8KxhluhUbMBk3225mJ9IH2pcBlQkeK78b7lTw&s',
+        disponible: true,
+        destacado: true,
+    },
+    {
+        nombre: 'MacBook Air',
+        descripcion: 'Laptop diseñada para trabajar',
+        precio: '5,000',
+        categoria: 'Mac',
+        imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHeVnF8KxhluhUbMBk3225mJ9IH2pcBlQkeK78b7lTw&s',
+        disponible: true,
+        destacado: true,
+    },
+]
+---
+
+<Layout>
+    <body class='bg-zinc-50 text-zinc-950'>
+        <main>
+            <header>
+                <p>Nuestra selección</p>
+                <h1>Productos diseñados para ti</h1>
+            </header>
+        </main>
+        <section>
+            {productos.map((producto) => <ProductCard producto={producto} />)}
+        </section>
+    </body>
+</Layout>
+
+<!-- <html lang='en'></html> -->
