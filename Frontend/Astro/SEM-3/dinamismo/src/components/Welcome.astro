@@ -63,6 +63,9 @@ const usuario = {
             <ul>
                 {cursos.map((curso) => curso.disponible && <li>{curso.nombre}</li>)}
             </ul>
+            <div class='subtitulo'>
+                <h4>Esto es un subtítulo</h4>
+            </div>
         </section>
     </main>
 </div>
@@ -101,6 +104,11 @@ const usuario = {
     h1 {
         font-size: 22px;
         margin-top: 0.25em;
+    }
+
+    .subtitulo {
+        background: #171b30;
+        padding: 2rem;
     }
 
     #links {

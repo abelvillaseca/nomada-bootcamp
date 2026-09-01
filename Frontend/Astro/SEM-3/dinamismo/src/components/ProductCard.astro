@@ -5,14 +5,14 @@ const { producto } = Astro.props
 <article
     class='group overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition duration-300 hover:translate-y-1 hover:shadow-lg'
 >
-    <div class='aspect-4/3 overflow-hidden bg-zinc-100'>
+    <div class='aspect-4/3 overflow-hidden bg-zinc-100 tarjeta'>
         <img
             src={producto.imagen}
             alt={producto.nombre}
             class='h-full w-full object-cover transition duration-500 group-hover:scale-105'
         />
     </div>
-    <div class='space-y-5 p-6'>
+    <div class='space-y-5 p-6 tarjeta'>
         <div class='flex items-center justify-between gap-4'>
             <span class='text-xs font-medium uppercase tracking-tight-[0.18em] text-zinc-500'
                 >{producto.categoria}</span
@@ -27,3 +27,10 @@ const { producto } = Astro.props
         </div>
     </div>
 </article>
+
+<style>
+    .tarjeta {
+        background: #171b30;
+        padding: 2rem;
+    }
+</style>

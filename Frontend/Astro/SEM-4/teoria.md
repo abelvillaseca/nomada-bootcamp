@@ -1,0 +1,3 @@
+- CSS Nativo con scope
+- Tailwind 4.3
+- CSS Modules
