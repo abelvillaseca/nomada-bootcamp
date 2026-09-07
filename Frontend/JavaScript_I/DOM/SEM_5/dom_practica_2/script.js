@@ -7,3 +7,11 @@ texto.addEventListener("input", () => {
   const cantidad = contenido.length;
   contador.textContent = `${cantidad} caracteres`;
 });
+
+// Crea un botón que, al hacer clic, cambie el color de un texto dentro de un <p>. Usa innerHTML para modificar la etiqueta de manera dinámica.​
+const botonColor = document.getElementById("btnColor");
+const mensaje = document.getElementById("mensaje");
+
+botonColor.addEventListener("click", () => {
+  mensaje.innerHTML = `<span style="color: blue;">Este es un texto con color azul.</span>`;
+});

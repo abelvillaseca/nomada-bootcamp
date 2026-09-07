@@ -78,3 +78,9 @@ input:focus {
   color: #0071e3;
   font-weight: 600;
 }
+
+#mensaje {
+  margin: 25px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
