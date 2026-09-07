@@ -5,3 +5,15 @@ botonColorTitulo.addEventListener("click", function () {
   const primerTitulo = titulo[0];
   primerTitulo.style.color = "red";
 });
+
+const elemento = document.querySelector(".elementoDestacado");
+
+elemento.addEventListener("click", function () {
+  elemento.style.backgroundColor = "yellow";
+});
+
+const enlaces = document.querySelectorAll("a");
+
+enlaces.forEach(function (enlace) {
+  console.log(enlace.href);
+});

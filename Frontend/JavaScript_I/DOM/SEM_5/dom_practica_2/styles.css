@@ -57,3 +57,24 @@ button {
 button:hover {
   opacity: 0.85;
 }
+
+input {
+  width: 100%;
+  padding: 15px 16px;
+  margin-top: 20px;
+  border: 1px solid #d2d2d7;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 4px rgb(0 113 227 / 10%);
+}
+
+#contador {
+  margin-top: 18px;
+  color: #0071e3;
+  font-weight: 600;
+}
