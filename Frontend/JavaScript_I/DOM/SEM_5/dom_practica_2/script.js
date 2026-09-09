@@ -29,3 +29,5 @@ botonReemplazar.addEventListener("click", function () {
     >
   `;
 });
+
+// Crea un campo de texto donde el usuario escriba en mayúsculas y, al salir del campo (onblur), el texto se transforme en minúsculas usando value.
