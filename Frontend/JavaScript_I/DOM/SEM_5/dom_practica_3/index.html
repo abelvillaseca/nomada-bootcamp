@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reservas CINE</title>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <p class="eyebrow">Reservas CINE</p>
+        <h1>Reserva tu película</h1>
+        <p class="subtitle">Gestiona tus entradas de forma sencilla.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ESTADÍSTICAS -->
+      <section class="stats">
+        <article class="stat-card">
+          <span class="stat-label">Reservas</span>
+          <strong id="totalReservas">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Entradas</span>
+          <strong id="totalEntradas">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Recaudación</span>
+          <strong id="recaudacion">S/ 0.00</strong>
+        </article>
+      </section>
+
+      <!-- FORMULARIO -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">NUEVA RESERVA</p>
+            <h2>Registrar entrada</h2>
+          </div>
+        </div>
+
+        <form id="formReserva">
+          <div class="form-group">
+            <label for="nombre">Nombre del cliente</label>
+            <input type="text" id="nombre" placeholder="Ej. Carlos Pérez" />
+          </div>
+
+          <div class="form-group">
+            <label for="pelicula">Película</label>
+            <select id="pelicula">
+              <option value="">Selecciona una película</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cantidad">Cantidad de entradas</label>
+            <input type="number" id="cantidad" min="1" max="10" value="1" />
+          </div>
+
+          <button type="submit" class="button">Registrar reserva</button>
+        </form>
+      </section>
+
+      <!-- LISTA DE RESERVAS -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">RESERVAS</p>
+            <h2>Reservas registradas</h2>
+          </div>
+          <span id="estadoReservas" class="badge">Sin reservas</span>
+        </div>
+
+        <div id="listaReservas">
+          <p class="empty">Todavía no existen reservas</p>
+        </div>
+      </section>
+
+      <!-- INFORMACIÓN DE PELÍCULAS -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">CARTELERA</p>
+            <h2>Películas disponibles</h2>
+          </div>
+        </div>
+
+        <div id="listaPeliculas" class="movies"></div>
+      </section>
+
+      <!-- RESUMEN -->
+      <section class="summary">
+        <h2>Resumen del sistema</h2>
+        <p id="mensajeResumen">Aún no hay información para mostrar</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
