@@ -156,6 +156,46 @@ select:focus {
   opacity: 0.9;
 }
 
+.reserva {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e5e7;
+}
+
+.reserva:last-child {
+  border-bottom: 0;
+}
+
+.reserva-info h3 {
+  font-size: 17px;
+}
+
+.reserva-info p {
+  color: #6e6e73;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.reserva-price {
+  text-align: right;
+}
+
+.reserva-price strong {
+  display: block;
+}
+
+.delete-button {
+  margin-top: 6px;
+  border: 0;
+  background: transparent;
+  color: #ff3b30;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .badge {
   background: #f5f5f7;
   color: #6e6e73;
@@ -179,4 +219,54 @@ select:focus {
   border: 1px solid #e5e5e7;
   border-radius: 18px;
   padding: 20px;
+}
+
+.movie h3 {
+  font-size: 18px;
+}
+
+.movie p {
+  margin-top: 6px;
+  color: #6e6e73;
+  font-size: 14px;
+}
+
+.movie-price {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.summary {
+  background: #1d1d1f;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.summary p {
+  color: #d2d2d7;
+  margin-top: 10px;
+}
+
+.empty {
+  color: #6e6e73;
+  text-align: center;
+  padding: 32px;
+}
+
+@media (max-width: 700px) {
+  .stats,
+  .movies {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reserva-price {
+    text-align: left;
+  }
 }
