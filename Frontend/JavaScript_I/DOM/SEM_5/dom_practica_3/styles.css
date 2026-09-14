@@ -168,3 +168,15 @@ select:focus {
   background: #e8f5e9;
   color: #248a3d;
 }
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.movie {
+  border: 1px solid #e5e5e7;
+  border-radius: 18px;
+  padding: 20px;
+}
