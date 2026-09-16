@@ -243,7 +243,91 @@ function actualizarResumen() {
   const peliculaMasReservada = ranking.reduce((mayor, actual) => {
     return actual[1] > mayor[1] ? actual : mayor;
   });
+
+  const existeAgotada = peliculas.some((pelicula) => {
+    return pelicula.disponible === false;
+  });
+
+  const todasDisponibles = peliculas.every((pelicula) => {
+    return pelicula.disponible === true;
+  });
+
+  const cienciaFiccion = peliculas.filter((pelicula) => {
+    return pelicula.genero === "Ciencia ficción";
+  });
+
+  const nombresCienciaFiccion = cienciaFiccion
+    .map((pelicula) => pelicula.titulo)
+    .join(", ");
+
+  mensajeResumen.innerHTML = `
+
+        <strong>
+            ${entradas}
+        </strong>
+        entrada(s) vendida(s).
+
+        Se recaudó un total de
+        <strong>
+            S/ ${dinero.toFixed(2)}
+        </strong>.
+
+        La película más reservada es
+        <strong>
+            ${peliculaMasReservada[0]}
+        </strong>
+        con
+        <strong>
+            ${peliculaMasReservada[1]}
+        </strong>
+        entrada(s).
+
+        <br><br>
+
+        ${
+          existeAgotada
+            ? "Existe al menos una película agotada."
+            : "Actualmente no hay películas agotadas."
+        }
+
+        <br>
+
+        ${
+          todasDisponibles
+            ? "Todas las películas están disponibles."
+            : "No todas las películas están disponibles."
+        }
+
+        <br><br>
+
+        Películas de ciencia ficción:
+        <strong>
+            ${nombresCienciaFiccion}
+        </strong>
+
+    `;
 }
+
+formReserva.addEventListener("submit", registrarReserva);
+
+peliculaSelect.addEventListener("change", (event) => {
+  const id = event.target.value;
+
+  if (id === "") {
+    return;
+  }
+
+  const pelicula = buscarPelicula(id);
+
+  if (pelicula) {
+    console.log(`Película seleccionada: ${pelicula.titulo}`);
+
+    console.log(`Precio: S/ ${pelicula.precio}`);
+  }
+});
 
 cargarPeliculas();
 mostrarPeliculas();
+mostrarReservas();
+actualizarEstadisticas();
+actualizarResumen();
