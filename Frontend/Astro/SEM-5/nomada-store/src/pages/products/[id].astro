@@ -51,28 +51,64 @@ const product = await response.json();
 >
   <Header />
 
-  <main>
-    <a href="/">Volver al catálogo</a>
-    <article>
-      <div>
-        <img src={product.image} alt={product.title} />
+  <main class="mx-auto max-w-6xl px-6 py-16">
+    <a
+      href="/"
+      class="inline-flex items-center gap-2
+             text-sm font-medium text-neutral-500
+             transition hover:text-neutral-950"
+      >Volver al catálogo</a
+    >
+    <article
+      class="mt-10 grid overflow-hidden rounded-3xl
+             border border-neutral-200 bg-white
+             lg:grid-cols-2"
+    >
+      <div
+        class="flex min-h-125 items-center
+               justify-center bg-neutral-50 p-12"
+      >
+        <img
+          src={product.image}
+          alt={product.title}
+          class="max-h-112.5 w-full object-contain"
+        />
       </div>
 
-      <div>
-        <span>{product.category}</span>
-        <h1>{product.title}</h1>
+      <div class="flex flex-col justify-center p-8 sm:p-12">
+        <span
+          class="w-fit rounded-full bg-brand-50
+                 px-3 py-1 text-xs font-semibold
+                 capitalize text-brand-700"
+          >{product.category}</span
+        >
+        <h1
+          class="mt-5 text-3xl font-bold
+                 tracking-tight text-neutral-950
+                 sm:text-4xl"
+        >
+          {product.title}
+        </h1>
 
-        <div>
-          <span>S/ {product.price.toFixed(2)}</span>
-          <span
+        <div class="mt-6 flex items-center gap-4">
+          <span class="text-3xl font-bold text-neutral-950"
+            >S/ {product.price.toFixed(2)}</span
+          >
+          <span class="text-sm text-neutral-500"
             >⭐️ {product.rating.rate} ({product.rating.count} valoraciones)</span
           >
         </div>
 
-        <div>
-          <p>{product.description}</p>
-          <a href="/">Seguir explorando</a>
-        </div>
+        <div class="my-8 h-px bg-neutral-200"></div>
+        <p class="leading-7 text-neutral-600">{product.description}</p>
+        <a
+          href="/"
+          class="mt-10 rounded-xl bg-neutral-950
+                 px-6 py-4 text-center text-sm
+                 font-semibold text-white
+                 transition hover:bg-neutral-800"
+          >Seguir explorando</a
+        >
       </div>
     </article>
   </main>
