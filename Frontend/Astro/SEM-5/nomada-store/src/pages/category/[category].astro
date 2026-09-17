@@ -6,6 +6,7 @@ import ProductGrid from "../../components/ProductGrid.astro";
 const API_URL = "https://fakestoreapi.com";
 
 export async function getStaticPaths() {
+  const API_URL = "https://fakestoreapi.com";
   const response = await fetch(`${API_URL}/products/categories`);
 
   if (!response.ok) {
