@@ -1,0 +1,63 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import ProductGrid from "../../components/ProductGrid.astro";
+import { encode } from "astro:schema";
+
+const API_URL = "https://fakestoreapi.com";
+
+export async function getStaticPaths() {
+  const response = await fetch(`${API_URL}/categories`);
+
+  if (!response.ok) {
+    throw new Error("No se pudieron obtener las categorías.");
+  }
+
+  const categories: string[] = await response.json();
+
+  return categories.map((category) => {
+    params: {
+      category: encodeURIComponent(category); // URL
+    }
+  });
+}
+
+const { category } = Astro.params;
+
+const decodedCategory = decodeURIComponent(category);
+
+const response = await fetch(
+  `${API_URL}/products/category/${encodeURIComponent(decodedCategory)}`,
+);
+
+if (!response.ok) {
+  throw new Error(`No se pudieron obtener productos de ${decodedCategory}.`);
+}
+
+const products = await response.json();
+---
+
+<MainLayout
+  title={`${decodedCategory} | Nómada Store`}
+  description={`Productos de ${decodedCategory}`}
+>
+  <Header />
+
+  <main>
+    <a href="/categories">Todas las categorías</a>
+    <div>
+      <span>Categoría</span>
+      <h1>{decodedCategory}</h1>
+      <p>{products.length} productos encontrados</p>
+    </div>
+    {
+      products.length > 0 ? (
+        <ProductGrid products={products} />
+      ) : (
+        <div>
+          <p>No encontramos productos.</p>
+        </div>
+      )
+    }
+  </main>
+</MainLayout>

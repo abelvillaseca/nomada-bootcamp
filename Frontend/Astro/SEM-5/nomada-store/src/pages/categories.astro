@@ -1,0 +1,45 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+
+const API_URL = "https://fakestoreapi.com";
+const response = await fetch(`${API_URL}/products/categories`);
+
+if (!response.ok) {
+  throw new Error(`Error al obtener categorías: ${response.status}`);
+}
+
+const categories: string[] = await response.json();
+---
+
+<MainLayout
+  title="Categorías | Nómada Store"
+  description="Categorías de productos"
+>
+  <Header />
+  <main class="mx-auto max-w-7xl px-6 py-16">
+    <div class="mb-12">
+      <span
+        class="text-sm font-semibold uppercase tracking-widest text-brand-600"
+        >Catálogo</span
+      >
+      <h1 class="mt-3 text-4xl font-bold tracking-tight text-neutral-950">
+        Categorías
+      </h1>
+      <p class="mt-4 text-neutral-600">
+        Selecciona una categoría para consultar sus productos
+      </p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        categories.map((category) => {
+          <a href={`/category.${encodeURIComponent(category)}`}>
+            <span>Categoría</span>
+            <h2>{category}</h2>
+          </a>;
+        })
+      }
+    </div>
+  </main>
+</MainLayout>

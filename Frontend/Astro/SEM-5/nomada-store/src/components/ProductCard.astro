@@ -17,6 +17,7 @@ const { id, title, price, category, image, rating } = Astro.props;
 <article
   class="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition duration-300 hover:translate-y-1 hover:shadow-xl"
 >
+  <!-- IMAGEN -->
   <div class="flex h-72 items-center justify-center bg-neutral-50 p-8">
     <img
       src={image}
@@ -24,5 +25,31 @@ const { id, title, price, category, image, rating } = Astro.props;
       loading="lazy"
       class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
     />
+  </div>
+
+  <!-- INFORMACION -->
+  <div class="flex flex-1 flex-col p-5">
+    <span
+      class="mb-3 w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700"
+      >{category}</span
+    >
+    <h2 class="line-clamp-2 text-base font-semibold leading-6 text-neutral-900">
+      {title}
+    </h2>
+
+    <div class="mt-auto pt-6">
+      <div class="mb-4 flex items-center justify-between">
+        <span class="text-xl font-bold text-neutral-950"
+          >S/ {price.toFixed(2)}</span
+        >
+        <span class="text-sm text-neutral-500">⭐️ {rating.rate}</span>
+      </div>
+
+      <a
+        href={`/products/${id}`}
+        class="block rounded-xl bg-neutral-950 px-4 py-3 text-center text-white font-medium transition hover:bg-neutral-800"
+        >Ver producto</a
+      >
+    </div>
   </div>
 </article>

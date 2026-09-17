@@ -1,0 +1,79 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+
+const API_URL = "https://fakestoreapi.com";
+
+// getStaticPaths() slug
+// [id].astro es una ruta dińamica
+
+export async function getStaticPaths() {
+  const API_URL = "https://fakestoreapi.com";
+  const response = await fetch(`${API_URL}/products`);
+
+  if (!response.ok) {
+    throw new Error("No se pudieron obtener los productos.");
+  }
+
+  const products: {
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    image: string;
+    rating: {
+      rate: number;
+      count: number;
+    };
+  }[] = await response.json();
+
+  return products.map((product) => ({
+    params: {
+      id: String(product.id),
+    },
+  }));
+}
+
+const { id } = Astro.params;
+
+const response = await fetch(`${API_URL}/products/${id}`);
+
+if (!response.ok) {
+  throw new Error(`No se pudo obtener el producto ${id}.`);
+}
+
+const product = await response.json();
+---
+
+<MainLayout
+  title={`${product.title} | Nómada Store`}
+  description={product.description}
+>
+  <Header />
+
+  <main>
+    <a href="/">Volver al catálogo</a>
+    <article>
+      <div>
+        <img src={product.image} alt={product.title} />
+      </div>
+
+      <div>
+        <span>{product.category}</span>
+        <h1>{product.title}</h1>
+
+        <div>
+          <span>S/ {product.price.toFixed(2)}</span>
+          <span
+            >⭐️ {product.rating.rate} ({product.rating.count} valoraciones)</span
+          >
+        </div>
+
+        <div>
+          <p>{product.description}</p>
+          <a href="/">Seguir explorando</a>
+        </div>
+      </div>
+    </article>
+  </main>
+</MainLayout>
