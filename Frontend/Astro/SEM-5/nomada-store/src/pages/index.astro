@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+
+const API_URL = "https://fakestoreapi.com";
+const response = await fetch(`${API_URL}/products`);
+
+if (!response.ok) {
+  throw new Error(`Error al obtener productos: ${response.status}`);
+}
+
+const products = await response.json();
+---
+
+<MainLayout
+  title="Nómada Store | Productos"
+  description="Catálogo dinámico de productos"
+>
+  <Header />
+
+  <main>
+    <section class="border-b border-neutral-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <span
+          class="text-sm font-semibold uppercase tracking-widest text-brand-600"
+          >Nómada Store</span
+        >
+        <h1
+          class="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-neutral-950 sm:text-6xl"
+        >
+          Productos obtenidos <span class="text-brand-600">dinámicamente</span>
+        </h1>
+        <p class="mt-6 max-w-2xl tex-lg leading-8 text-neutral-600">
+          Catálogo de prueba para Nómada Bootcamp.
+        </p>
+
+        <div class="mt-8">
+          <span
+            class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700"
+          >
+            {products.length} productos encontrados
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 py-16">
+      <div class="mb-10">
+        <h2 class="text-2xl font-bold tracking-tight text-neutral-950">
+          Catálogo
+        </h2>
+        <p class="mt-2 text-neutral-500">
+          Información obtenida desde Fake Store API.
+        </p>
+      </div>
+      <ProductGrid products={products} />
+    </section>
+  </main>
+</MainLayout>

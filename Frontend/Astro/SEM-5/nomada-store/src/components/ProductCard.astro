@@ -1,0 +1,28 @@
+---
+interface Props {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+
+const { id, title, price, category, image, rating } = Astro.props;
+---
+
+<article
+  class="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition duration-300 hover:translate-y-1 hover:shadow-xl"
+>
+  <div class="flex h-72 items-center justify-center bg-neutral-50 p-8">
+    <img
+      src={image}
+      alt={title}
+      loading="lazy"
+      class="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+    />
+  </div>
+</article>

@@ -1,0 +1,34 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+interface Props {
+  products: Array<{
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    image: string;
+    rating: {
+      rate: number;
+      count: number;
+    };
+  }>;
+}
+
+const { products } = Astro.props;
+---
+
+<div>
+  {
+    products.map((product) => (
+      <ProductCard
+        id={product.id}
+        title={product.title}
+        price={product.price}
+        category={product.category}
+        image={product.image}
+        rating={product.rating}
+      />
+    ))
+  }
+</div>
