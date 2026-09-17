@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Centro de Control de Expediciones</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <span class="eyebrow">CENTRO DE CONTROL</span>
+        <h1>Expediciones</h1>
+        <p>Panel de investigadores y reportes científicos.</p>
+      </header>
+
+      <section class="stats">
+        <article class="stat-card">
+          <span>Investigadores</span>
+          <strong id="total-investigadores">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Reportes</span>
+          <strong id="total-reportes">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Promedio</span>
+          <strong id="promedio-reportes">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Seguimiento</span>
+          <strong id="total-seguimiento">0</strong>
+        </article>
+      </section>
+
+      <section class="controls">
+        <div class="control-group">
+          <label for="buscador">Buscar investigador</label>
+          <input
+            type="search"
+            id="buscador"
+            placeholder="Escribe un nombre..."
+          />
+        </div>
+        <div class="control-group">
+          <label for="expedicion">Nueva expedición</label>
+          <div class="input-row">
+            <input
+              type="text"
+              id="expedicion"
+              placeholder="Ej. Expedición Andes"
+            />
+            <button id="agregar-expedicion">Agregar</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="estado" id="estado">Cargando investigadores...</div>
+
+      <section>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">EQUIPO</span>
+            <h2>Investigadores</h2>
+          </div>
+          <span class="cantidad-resultados">0 resultados</span>
+        </div>
+        <div class="grid" id="lista-investigadores"></div>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow">INVESTIGADOR SELECCIONADO</span>
+        <h2 id="investigador-seleccionado">Ninguno</h2>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">SEGUIMIENTO</span>
+            <h2>Investigadores en seguimiento</h2>
+          </div>
+        </div>
+
+        <ul id="lista-seguimiento"></ul>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow"> OPERACIONES </span>
+        <h2>Cola de expediciones</h2>
+        <div class="input-row">
+          <button id="procesar-expedicion">Procesar primera</button>
+          <button id="eliminar-historial">Eliminar última</button>
+        </div>
+        <p id="cola-info">No hay expediciones.</p>
+        <p id="historial-info">Historial vacío.</p>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow"> RESUMEN </span>
+        <p id="resumen-ciudades">-</p>
+        <p id="primeros-investigadores">-</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
