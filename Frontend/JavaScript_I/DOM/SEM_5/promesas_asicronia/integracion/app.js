@@ -20,7 +20,7 @@ const investigadorSeleccionado = document.querySelector(
   "#investigador-seleccionado",
 );
 const listaSeguimiento = document.querySelector("#lista-seguimiento");
-const totalInvestigadores = document.querySelector("total-investigadores");
+const totalInvestigadores = document.querySelector("#total-investigadores");
 const totalReportes = document.querySelector("#total-reportes");
 const promedioReportes = document.querySelector("#promedio-reportes");
 const totalSeguimiento = document.querySelector("#total-seguimiento");
@@ -86,7 +86,7 @@ async function cargarInvestigadores() {
     estado.textContent = "Investigadores cargados correctamente.";
 
     mostrarInvestigadores(investigadores);
-    // actualizarEstadisticas();
+    actualizarEstadisticas();
     // mostrarInformacionAdicional();
   } catch (error) {
     estado.textContent = `No fue posible cargar los investigadores: ${error.message}`;
@@ -169,6 +169,75 @@ function seleccionarInvestigador(id) {
   investigadorSeleccionado.textContent = investigadores[indice].nombre;
 
   mostrarInvestigadores(investigadores);
+}
+
+function agregarSeguimiento(id) {
+  if (seguimiento.includes(id)) {
+    console.log("El investigador ya está en seguimiento.");
+    return;
+  }
+
+  seguimiento.push(id);
+
+  mostrarSeguimiento();
+
+  actualizarEstadisticas();
+}
+
+function mostrarSeguimiento() {
+  listaSeguimiento.innerHTML = "";
+
+  seguimiento.forEach((id) => {
+    const investigador = investigadores.find((item) => {
+      return item.id === id;
+    });
+
+    if (investigador) {
+      const elemento = document.createElement("li");
+
+      elemento.textContent = investigador.nombre;
+
+      listaSeguimiento.append(elemento);
+    }
+  });
+
+  totalSeguimiento.textContent = seguimiento.length;
+}
+
+function actualizarEstadisticas() {
+  totalInvestigadores.textContent = investigadores.length;
+
+  const total = investigadores.reduce((acumulador, investigador) => {
+    return acumulador + investigador.reportes;
+  }, 0);
+
+  totalReportes.textContent = total;
+
+  const promedio =
+    investigadores.length > 0 ? total / investigadores.length : 0;
+
+  promedioReportes.textContent = promedio.toFixed(1);
+
+  const investigadoresActivos = investigadores.filter((investigador) => {
+    return investigador.reportes > 5;
+  });
+
+  console.log(
+    "Investigadores con más de 5 reportes: ",
+    investigadoresActivos.length,
+  );
+
+  const todosActivos = investigadores.every((investigador) => {
+    return investigador.activo === true;
+  });
+
+  console.log("¿Todos están activos?", todosActivos);
+
+  const algunoTieneMuchosReportes = investigadores.some((investigador) => {
+    return investigador.reportes > 8;
+  });
+
+  console.log("¿Alguno tiene más de 8 reportes?", algunoTieneMuchosReportes);
 }
 
 cargarInvestigadores();
