@@ -194,3 +194,5 @@ matematica.sumar(10, 20);
 //   - Acomplamiento
 //   - composición
 //   - Patrones de diseño
+
+// Principio de sustitución de Liskov y diseño de clases (LSP)
